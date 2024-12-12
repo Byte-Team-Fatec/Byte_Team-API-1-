@@ -71,6 +71,16 @@ h2 {
 
 /* Ajustes de responsividade para telas menores */
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+   width: 100%; /* Ajusta para que as seções ocupem toda a largura em telas menores */
+   margin: 0 auto; /* Centraliza o container */
+   }
+
+   header nav a {
+       font-size: 18px; /* Diminui o tamanho da fonte em telas menores */
+       margin-left: 10px; /* Diminui a margem */
+   }
     h2 {
         font-size: 24px;
     }

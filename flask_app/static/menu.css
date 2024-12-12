@@ -147,6 +147,8 @@ body {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     transition: transform 0.3s ease;
+    overflow: hidden; /* Impede que o texto ou conteúdo transborde */
+    word-wrap: break-word;
 }
 
 .card img {
@@ -165,6 +167,8 @@ body {
   .card h1, .card h2 {
     margin: 10px 0;
     font-size: 18px;
+    word-wrap: break-word; /* Força quebra de linha para palavras longas */
+    white-space: normal;
   }
   
   .card a {
@@ -186,6 +190,9 @@ body {
     margin-top: 5px; /* Espaçamento superior */
     text-align: center; /* Centraliza o texto */
     font-style: italic; /* Adiciona um estilo itálico para diferenciação */
+    word-wrap: break-word; /* Quebra de palavras */
+    line-height: 1.4; /* Melhor espaçamento entre linhas */
+    
 }
 
   
@@ -230,6 +237,29 @@ body {
         padding: 10px 50px; /* Ajusta o padding em telas menores */
         font-size: 18px; /* Diminui o tamanho da fonte */
     }
+    .card {
+        width: calc(50% - 20px); /* Dois cards por linha */
+    }
 
-    
+    .card h1, .card h2 {
+        font-size: 16px; /* Reduz o tamanho da fonte */
+    }
+
+    .card p {
+        font-size: 13px; /* Reduz ainda mais o tamanho do texto */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 90%; /* Cards ocupam quase toda a largura */
+    }
+
+    .card h1, .card h2 {
+        font-size: 14px; /* Tamanho menor para textos */
+    }
+
+    .card p {
+        font-size: 12px; /* Ajusta o texto para caber no card */
+    }
 }

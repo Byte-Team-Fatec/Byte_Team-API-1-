@@ -23,22 +23,60 @@ body {
   padding: 0 20px;
 }
 
-.header-sobrenos .logo {
-  width: auto;
-  height: 100%;
+/* Estilo do header padrão */
+.header-sobrenos {
+  background-color: rgb(37, 52, 95);
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 20px;
+  position: relative;
 }
 
-.header-sobrenos .logo:hover {
-  box-shadow: 0 0 20px #25345f(125, 185, 215, 0.2);
+/* Estilo geral do header */
+header {
+  background-color: #322e82; /* Cor de fundo */
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Centraliza verticalmente todos os itens */
+  padding: 0 20px;
+  height: 80px; /* Altura consistente */
 }
 
-.header-sobrenos > nav > a {
-  font-size: 24px;
+/* Logo no Header */
+header .logo {
+  display: flex;
+  align-items: center; /* Garante que a logo esteja centralizada verticalmente */
+  height: 100%;
+}
+
+header .logo img {
+  height: 60px; /* Ajuste para que a logo se encaixe no header */
+  max-height: 100%; /* Garante que a logo não exceda a altura do header */
+  object-fit: contain; /* Mantém as proporções da logo */
+  margin: 0; /* Remove qualquer margem extra */
+}
+
+/* Navegação no Header */
+header nav {
+  display: flex;
+  gap: 20px; /* Espaçamento entre os links */
+}
+
+header nav a {
+  font-size: 18px;
   color: white;
-  margin: 10px;
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
+  padding: 5px 10px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+header nav a:hover {
+  background-color: white;
+  color: #322e82; /* Cor do texto ao passar o mouse */
+  border-radius: 5px; /* Bordas arredondadas */
 }
 
 .meetourteam {
@@ -153,9 +191,7 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  .header-sobrenos nav {
-    text-align: center;
-  }
+  
 
   .meetourteam {
     font-size: 32px;
@@ -169,4 +205,28 @@ body {
   .btnleft, .btnright {
     display: none;
   }
+  .header-sobrenos {
+    flex-direction: column; /* Alinha itens verticalmente */
+    height: auto; /* Permite que a altura cresça conforme necessário */
+    padding: 10px;
+  }
+
+  .header-sobrenos nav {
+    flex-direction: column; /* Links em coluna */
+    width: 100%; /* Ocupa toda a largura */
+    align-items: center;
+  }
+
+  .header-sobrenos nav a {
+    font-size: 20px; /* Aumenta o tamanho dos links */
+    padding: 10px 0; /* Adiciona espaço entre os links */
+    width: 100%;
+    text-align: center; /* Centraliza os links */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Adiciona separadores */
+  }
+
+  .header-sobrenos nav a:last-child {
+    border-bottom: none; /* Remove a borda do último item */
+  }
 }
+
